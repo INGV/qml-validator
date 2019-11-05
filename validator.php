@@ -1,7 +1,8 @@
 <?php
-        // Validate XML output
-	$FILE_QML_CACHE="monitor.xml";
-        echo "Validating $FILE_QML_CACHE";
+$FILE_QML_CACHE="input.xml";
+echo "\n";
+if (file_exists($FILE_QML_CACHE)) {
+        echo "Validating $FILE_QML_CACHE \n";
         libxml_use_internal_errors(true);
         $xml = new DOMDocument();
         $xml->load("$FILE_QML_CACHE");
@@ -15,7 +16,11 @@
                 libxml_clear_errors();
         }
         else {
-                echo " QuakeML is valid.";
+                echo " QuakeML is valid. \n";
         }
         libxml_use_internal_errors(false);
+} else {
+	echo "The file $FILE_QML_CACHE doesn't exist";
+}
+echo "\n";
 ?>

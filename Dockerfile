@@ -16,9 +16,10 @@ RUN apt-get update \
 
 WORKDIR /opt
 
-RUN wget -O ${QUAKEML_VERSION} "https://quake.ethz.ch/quakeml/Documents?action=AttachFile&do=get&target=${QUAKEML_VERSION}"
-RUN tar -xvzf ${QUAKEML_VERSION}
+RUN wget -O ${QUAKEML_VERSION} "https://quake.ethz.ch/quakeml/Documents?action=AttachFile&do=get&target=${QUAKEML_VERSION}" \
+    && tar -xvzf ${QUAKEML_VERSION} \
+    && rm -f ${QUAKEML_VERSION}
 
-COPY . /opt
-WORKDIR /opt
+COPY validator.php /opt
+
 CMD [ "php", "./validator.php" ]

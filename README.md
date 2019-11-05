@@ -12,7 +12,7 @@ $ docker build --tag quakeml-validator .
 
 ### Run docker
 ```
-$ docker run -it --rm -v $(pwd)/your_file_to_validete.xml:/opt/input.xml quakeml-validator
+$ docker run -it --rm -v $(pwd)/your_file_to_validate.xml:/opt/input.xml quakeml-validator
 ```
 
 # Contribute

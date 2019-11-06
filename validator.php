@@ -19,22 +19,6 @@ if (file_exists($FILE_QML_CACHE)) {
         else {
                 echo " QuakeML is valid. \n";
         }
-	echo "\n";
-
-        echo "Validating $FILE_QML_CACHE with schema 2.0 \n";
-        if ( !$xml->schemaValidate('./xsd/QuakeML-2.0.xsd') ) {
-
-                $errors = libxml_get_errors();
-                foreach ($errors as $error) {
-                        $validation_error = " XML error:\n  MESSAGE=$error->message  LEVEL=[$error->level]\n  CODE=$error->code\n  FILE=$error->file\n  LINE=$error->line \n\n";
-                }
-                echo " QuakeML is not valid: \n$validation_error";
-                libxml_clear_errors();
-        }
-        else {
-                echo " QuakeML is valid. \n";
-        }
-
         libxml_use_internal_errors(false);
 } else {
 	echo "The file $FILE_QML_CACHE doesn't exist";

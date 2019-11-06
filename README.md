@@ -1,6 +1,6 @@
 # quakeml-validator
 
-bla bla
+This tool validate an XML file with QuakeML-1.2.xsd schema
 
 ## Quickstart
 ### Build docker

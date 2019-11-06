@@ -3,7 +3,7 @@
 [![Join the #general channel](https://img.shields.io/badge/Slack%20channel-%23general-blue.svg)](https://ingv-institute.slack.com/messages/CKS902Y5B)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://ingv-institute.slack.com/)
 
-# quakeml-validator [![Versione](https://img.shields.io/github/release/INGV/quakeml-validator.svg)]
+# quakeml-validator
 
 This tool validate an XML file with QuakeML-1.2.xsd schema
 

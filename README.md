@@ -3,7 +3,7 @@
 [![Join the #general channel](https://img.shields.io/badge/Slack%20channel-%23general-blue.svg)](https://ingv-institute.slack.com/messages/CKS902Y5B)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://ingv-institute.slack.com/)
 
-# quakeml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https%3A%2F%2Fraw.githubusercontent.com%2FINGV%2Fquakeml-validator%2Fmaster%2Fpubliccode.yml)](https://github.com/INGV/quakeml-validator/blob/master/HISTORY)
+# quakeml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https://raw.githubusercontent.com/INGV/quakeml-validator/master/publiccode.yml)](https://github.com/INGV/quakeml-validator/blob/master/publiccode.yml)
 
 This tool validate an XML file with QuakeML-1.2.xsd schema
 

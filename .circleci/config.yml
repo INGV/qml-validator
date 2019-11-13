@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Start Docker Containers
+          command: |
+            cd Docker
+            cp -v env-example .env
+            docker build --tag quakeml-validator .
+      - run:
+          name: Check Docker started
+          command: |
+            docker ps -a 
+            cd Docker
+            docker-compose ps
+      - run:
+          name: Get a QaukeML file to test
+          command: |
+            cd 
+            time wget -O /tmp/my_file.xml "http://webservices.ingv.it/fdsnws/event/1/query?starttime=2012-05-29T00:00:00&endtime=2012-05-29T23:59:59"
+      - run:
+          name: Test
+          command: |
+            time docker run -it --rm -v /tmp/my_file.xml:/opt/input.xml quakeml-validator
+            
+  test_publiccode:
+    docker:
+      - image: circleci/golang:1.12
+    steps:
+      - checkout
+      - run: go get -v github.com/italia/publiccode-parser-go/pcvalidate
+      - run: /go/bin/pcvalidate --remote-base-url https://raw.githubusercontent.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH publiccode.yml
+      
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test_publiccode

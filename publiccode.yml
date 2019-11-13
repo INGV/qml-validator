@@ -47,11 +47,15 @@ description:
       Docker used to validate XML file with QuakeML-1.2.xsd schema.
     documentation: 'https://github.com/INGV/fdsnws-fetcher/blob/master/README.md'
     longDescription: >
-      The Quake Markup Language (QuakeML) is a flexible, extensible and modular XML representation of seismological data (e.g. epicenter, hypocenter, magnitude) which is intended to cover a broad range of fields of application in modern seismology.
+      The Quake Markup Language (QuakeML) is a flexible, extensible and modular XML representation of seismological data (e.g. epicenter, hypocenter, magnitude) 
+      which is intended to cover a broad range of fields of application in modern seismology.
+      
+      The flexible approach of QuakeML allows further extensions of the standard in order to represent waveform data, macroseismic information, 
+      probability density functions, slip distributions, shake maps, and others.
       
       This project is developed to validate an XML file with most stable release; QuakeML-1.2.xsd schema.
 
-      More info about QuakeML, here: https://quake.ethz.ch/quakeml/Documents
+      More info about QuakeML format, here: https://quake.ethz.ch/quakeml/Documents
     localisedName: 'QuakeML Validator'
     features:
       - QuakeML validator

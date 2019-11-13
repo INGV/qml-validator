@@ -14,14 +14,18 @@ jobs:
           command: |
             docker ps -a 
       - run:
-          name: Get a QaukeML file to test
+          name: Get a QuakeML files to test
           command: |
-            cd 
-            time wget -O /tmp/my_file.xml "http://webservices.ingv.it/fdsnws/event/1/query?starttime=2012-05-29T00:00:00&endtime=2012-05-29T23:59:59"
+            time wget -O /tmp/events.xml "http://webservices.ingv.it/fdsnws/event/1/query?starttime=2012-05-29T00:00:00&endtime=2012-05-29T23:59:59"
+            time wget -O /tmp/event.xml "http://webservices.ingv.it/fdsnws/event/1/query?eventId=841091&includeallmagnitudes=true&includeallorigins=true&includearrivals=true&includeallstationsmagnitudes=true"            
       - run:
-          name: Test
+          name: Test QuakeML events
           command: |
-            time docker run -it --rm -v /tmp/my_file.xml:/opt/input.xml quakeml-validator
+            time docker run -it --rm -v /tmp/events.xml:/opt/input.xml quakeml-validator
+      - run:
+          name: Test QuakeML event
+          command: |
+            time docker run -it --rm -v /tmp/event.xml:/opt/input.xml quakeml-validator
             
   test_publiccode:
     docker:

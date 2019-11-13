@@ -15,8 +15,6 @@ jobs:
           name: Check Docker started
           command: |
             docker ps -a 
-            cd Docker
-            docker-compose ps
       - run:
           name: Get a QaukeML file to test
           command: |

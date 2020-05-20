@@ -37,7 +37,7 @@ jobs:
       
 workflows:
   version: 2
-  my_workflow:
+  quakeml-validator-workflow:
     jobs:
       - build_and_test
       - test_publiccode

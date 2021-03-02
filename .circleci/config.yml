@@ -56,12 +56,11 @@ jobs:
       - run:
           name: Publish Docker description (README.md) to Docker Hub
           command: |
-            docker run --rm -v $PWD:/workspace \
-              -e DOCKERHUB_USERNAME=$DOCKERHUB_USERNAME \
-              -e DOCKERHUB_PASSWORD=$DOCKERHUB_ACCESS_TOKEN \
-              -e DOCKERHUB_REPOSITORY=$IMAGE_NAME \
-              -e README_FILEPATH='./README.md' \
-              peterevans/dockerhub-description:2
+            wget "https://github.com/christian-korneck/docker-pushrm/releases/download/v1.7.0/docker-pushrm_darwin_amd64"
+            tar xvzf docker-pushrm_darwin_amd64
+            mkdir -p ~/.docker/cli-plugins/
+            cp docker-pushrm_darwin_amd64 ~/.docker/cli-plugins/docker-pushrm
+            docker pushrm --help
   end:
     docker:
       - image: debian:stretch

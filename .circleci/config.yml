@@ -55,8 +55,8 @@ jobs:
             ls -l /tmp/workspace
             docker run --rm -t \
               -v /tmp/workspace:/myvol \
-              -e DOCKER_USER=$DOCKERHUB_USERNAME \
-              -e DOCKER_PASS=$DOCKERHUB_PASSWORD \
+              -e DOCKER_USER=vlauciani \
+              -e DOCKER_PASS=befras-mikgu9-Pircag \
               -e PUSHRM_PROVIDER=dockerhub \
               -e PUSHRM_FILE=/myvol/README.md \
               -e PUSHRM_TARGET=ingv/qml-validator \

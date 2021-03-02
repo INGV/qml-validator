@@ -52,6 +52,7 @@ jobs:
             IMAGE_TAG=${CIRCLE_TAG/v/''}
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker images
+            docker run --rm \
               -v /tmp/workspace/README.md:/data/README.md \
               -e DOCKERHUB_USERNAME=$DOCKERHUB_USERNAME \
               -e DOCKERHUB_PASSWORD=DOCKERHUB_PASSWORD \

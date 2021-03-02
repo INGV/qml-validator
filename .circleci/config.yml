@@ -51,9 +51,9 @@ jobs:
             IMAGE_TAG=${CIRCLE_TAG/v/''}
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker images
-            wget "https://github.com/christian-korneck/docker-pushrm/releases/download/v1.7.0/docker-pushrm_darwin_amd64"
+            wget "https://github.com/christian-korneck/docker-pushrm/releases/download/v1.7.0/docker-pushrm_linux_amd64"
             mkdir -p $HOME/.docker/cli-plugins/
-            cp docker-pushrm_darwin_amd64 $HOME/.docker/cli-plugins/docker-pushrm
+            cp docker-pushrm_linux_amd64 $HOME/.docker/cli-plugins/docker-pushrm
             chmod +x $HOME/.docker/cli-plugins/docker-pushrm
             $HOME/.docker/cli-plugins/docker-pushrm --file ./README.md $IMAGE_NAME
             #docker pushrm --help

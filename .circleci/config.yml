@@ -52,9 +52,10 @@ jobs:
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker images
             wget "https://github.com/christian-korneck/docker-pushrm/releases/download/v1.7.0/docker-pushrm_darwin_amd64"
-            mkdir -p ~/.docker/cli-plugins/
-            cp docker-pushrm_darwin_amd64 ~/.docker/cli-plugins/docker-pushrm
-            chmod +x ~/.docker/cli-plugins/docker-pushrm
+            mkdir -p $HOME/.docker/cli-plugins/
+            cp docker-pushrm_darwin_amd64 $HOME/.docker/cli-plugins/docker-pushrm
+            chmod +x $HOME/.docker/cli-plugins/docker-pushrm
+            docker pushrm --help
             docker pushrm $IMAGE_NAME
             docker push $IMAGE_NAME:latest
             docker push $IMAGE_NAME:$IMAGE_TAG

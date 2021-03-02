@@ -52,13 +52,15 @@ jobs:
             IMAGE_TAG=${CIRCLE_TAG/v/''}
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker images
-            docker run --rm \
-              -v /tmp/workspace/README.md:/data/README.md \
-              -e DOCKERHUB_USERNAME=$DOCKERHUB_USERNAME \
-              -e DOCKERHUB_PASSWORD=DOCKERHUB_PASSWORD \
-              -e DOCKERHUB_REPO_PREFIX=ingv \
-              -e DOCKERHUB_REPO_NAME=qml-validator \
-              sheogorath/readme-to-dockerhub
+            docker run --rm -t \
+              -v $(pwd):/myvol \
+              -e DOCKER_USER=$DOCKERHUB_USERNAME \
+              -e DOCKER_PASS=$DOCKERHUB_PASSWORD \
+              -e PUSHRM_PROVIDER=ingv \
+              -e PUSHRM_FILE=/myvol/README.md \
+              -e PUSHRM_TARGET=ingv/qml-validator \
+              -e PUSHRM_DEBUG=1 \
+              chko/docker-pushrm:1
             #wget "https://github.com/christian-korneck/docker-pushrm/releases/download/v1.7.0/docker-pushrm_linux_amd64"
             #mkdir -p $HOME/.docker/cli-plugins/
             #cp docker-pushrm_linux_amd64 $HOME/.docker/cli-plugins/docker-pushrm

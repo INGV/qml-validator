@@ -52,6 +52,7 @@ jobs:
             IMAGE_TAG=${CIRCLE_TAG/v/''}
             docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
             docker images
+            ls -l /tmp/workspace
             docker run --rm -t \
               -v /tmp/workspace:/myvol \
               -e DOCKER_USER=$DOCKERHUB_USERNAME \

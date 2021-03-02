@@ -3,6 +3,10 @@
 #  - https://circleci.com/docs/2.0/configuration-reference/#tags
 #  - https://circleci.com/docs/2.0/workflows/#executing-workflows-for-a-git-tag
 version: 2.1
+
+orbs:
+  readmyhub: gofunky/readmyhub@1.2.2
+
 executors:
   docker-publisher:
     environment:
@@ -53,6 +57,7 @@ jobs:
             docker images
             docker push $IMAGE_NAME:latest
             docker push $IMAGE_NAME:$IMAGE_TAG
+      - readmyhub
   end:
     docker:
       - image: debian:stretch

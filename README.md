@@ -1,23 +1,40 @@
 [![License](https://img.shields.io/github/license/INGV/quakeml-validator.svg)](https://github.com/INGV/quakeml-validator/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/INGV/quakeml-validator.svg)](https://github.com/INGV/quakeml-validator/issues)
-[![Join the #general channel](https://img.shields.io/badge/Slack%20channel-%23general-blue.svg)](https://ingv-institute.slack.com/messages/CKS902Y5B)
-[![Get invited](https://slack.developers.italia.it/badge.svg)](https://ingv-institute.slack.com/)
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ingv/qml-validator)
+![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/ingv/qml-validator?sort=semver)
+![Docker Pulls](https://img.shields.io/docker/pulls/ingv/qml-validator)
 
 # quakeml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https://raw.githubusercontent.com/INGV/quakeml-validator/master/publiccode.yml)](https://github.com/INGV/quakeml-validator/blob/master/publiccode.yml)
 
 This tool validate an XML file with QuakeML-1.2.xsd schema
 
 ## Quickstart
-### Build docker
+### Docker image
+To obtain *qml-validator* docker image, you have two options:
+
+#### 1) Get built image from DockerHub (*preferred*)
+Get the last built image from DockerHub repository:
 ```
-$ git clone https://github.com/ingv/quakeml-validator
-$ cd quakeml-validator
-$ docker build --tag quakeml-validator .
+$ docker pull ingv/qml-validator
+```
+
+#### 2) Build by yourself
+First, clone the git repository
+```
+$ git clone https://github.com/INGV/qml-validator.git
+$ cd qml-validator
+$ docker build --tag ingv/qml-validator .
+```
+
+in case of errors, try:
+```
+$ docker build --no-cache --pull --tag ingv/qml-validator .
 ```
 
 ### Run docker
 ```
-$ docker run -it --rm -v $(pwd)/your_file_to_validate.xml:/opt/input.xml quakeml-validator
+$ docker run -it --rm -v $(pwd)/your_file_to_validate.xml:/opt/input.xml ingv/qml-validator
 ```
 
 ### Example screenshot

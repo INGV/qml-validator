@@ -7,7 +7,7 @@
 
 # qml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https://raw.githubusercontent.com/INGV/qml-validator/master/publiccode.yml)](https://github.com/INGV/qml-validator/blob/master/publiccode.yml)
 
-This tool validate an XML file with QuakeML-1.2.xsd schema
+This tool validate an XML file with QuakeML-1.2.xsd schema.
 
 ## Quickstart
 ### Docker image

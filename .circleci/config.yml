@@ -66,6 +66,7 @@ jobs:
             cp docker-pushrm_linux_amd64 $HOME/.docker/cli-plugins/docker-pushrm
             chmod +x $HOME/.docker/cli-plugins/docker-pushrm
             docker logout
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             DOCKERHUB_USERNAME=vlauciani DOCKERHUB_PASSWORD=befras-mikgu9-Pircag $HOME/.docker/cli-plugins/docker-pushrm --file /tmp/workspace/README.md $IMAGE_NAME
             #docker pushrm --help
             #docker pushrm $IMAGE_NAME

@@ -56,7 +56,8 @@ jobs:
             mkdir -p $HOME/.docker/cli-plugins/
             cp docker-pushrm_linux_amd64 $HOME/.docker/cli-plugins/docker-pushrm
             chmod +x $HOME/.docker/cli-plugins/docker-pushrm
-            $HOME/.docker/cli-plugins/docker-pushrm --file /tmp/workspace/README.md $IMAGE_NAME
+            docker logout
+            DOCKERHUB_USERNAME=vlauciani DOCKERHUB_PASSWORD=$DOCKERHUB_PASSWORD $HOME/.docker/cli-plugins/docker-pushrm --file /tmp/workspace/README.md $IMAGE_NAME
             #docker pushrm --help
             #docker pushrm $IMAGE_NAME
             #docker push $IMAGE_NAME:latest

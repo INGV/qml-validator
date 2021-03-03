@@ -7,6 +7,7 @@ executors:
   docker-publisher:
     environment:
       IMAGE_NAME: ingv/qml-validator
+      PIPPO: qml-validator
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
@@ -72,7 +73,7 @@ jobs:
             # copy a config file into this volume
             docker cp publiccode.yml myfolder:/publiccode_folder
             # start an application container using this volume
-            docker run --rm --volumes-from myfolder italia/publiccode-parser-go --remote-base-url "https://raw.githubusercontent.com/${IMAGE_NAME}/master" publiccode_folder/publiccode.yml
+            docker run --rm --volumes-from myfolder italia/publiccode-parser-go --remote-base-url "https://raw.githubusercontent.com/INGV/${PIPPO}/master" publiccode_folder/publiccode.yml
 
 workflows:
   version: 2.1

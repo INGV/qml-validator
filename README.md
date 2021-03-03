@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/github/license/INGV/qml-validator.svg)](https://github.com/INGV/qml-validator/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/INGV/qml-validator.svg)](https://github.com/INGV/qml-validator/issues)
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ingv/qml-validator)
+![Docker Automated build](https://img.shields.io/docker/automated/ingv/qml-validator)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/ingv/qml-validator?sort=semver)
 ![Docker Pulls](https://img.shields.io/docker/pulls/ingv/qml-validator)
 

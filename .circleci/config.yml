@@ -8,6 +8,7 @@ executors:
     environment:
       IMAGE_NAME: ingv/qml-validator
       PIPPO: qml-validator
+      PLUTO: INGV/${PIPPO}
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
@@ -67,6 +68,8 @@ jobs:
           # https://github.com/italia/publiccode-parser-go
           name: Validate publiccode file
           command: |
+            echo "PIPPO=${PIPPO}"
+            echo "PLUTO=${PLUTO}"
             ### CircleCI cannot mount folder: https://circleci.com/docs/2.0/building-docker-images/#mounting-folders
             # create a dummy container which will hold a volume with config
             docker create -v /publiccode_folder --name myfolder alpine:3.4 /bin/true

@@ -5,7 +5,7 @@
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/ingv/qml-validator?sort=semver)
 ![Docker Pulls](https://img.shields.io/docker/pulls/ingv/qml-validator)
 
-# qml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https://raw.githubusercontent.com/INGV/qml-validator/master/publiccode.yml)](https://github.com/INGV/qml-validator/blob/master/publiccode.yml)
+# qml-validator [![Version](https://img.shields.io/badge/dynamic/yaml?label=ver&query=softwareVersion&url=https://raw.githubusercontent.com/INGV/qml-validator/master/publiccode.yml)](https://github.com/INGV/qml-validator/blob/master/publiccode.yml) [![CircleCI](https://circleci.com/gh/INGV/qml-validator/tree/master.svg?style=svg)](https://circleci.com/gh/INGV/qml-validator/tree/master)
 
 This tool validate an XML file with QuakeML-1.2.xsd schema.
 

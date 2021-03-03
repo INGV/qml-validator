@@ -56,6 +56,7 @@ description:
       This project is developed to validate an XML file with most stable release; QuakeML-1.2.xsd schema.
 
       More info about QuakeML format, here: https://quake.ethz.ch/quakeml/Documents
+
     localisedName: 'QuakeML Validator'
     features:
       - QuakeML validator

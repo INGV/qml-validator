@@ -94,24 +94,24 @@ workflows:
           filters:
             tags: # If neither only nor ignore are specified then the job is skipped for all tags: https://circleci.com/docs/2.0/configuration-reference/#tags
               only: /^v.*/
-            branches:
-              ignore: /.*/
+#            branches:
+#              ignore: /.*/
       - build:
           requires:
             - start
           filters:
             tags: # If neither only nor ignore are specified then the job is skipped for all tags: https://circleci.com/docs/2.0/configuration-reference/#tags
               only: /^v.*/
-            branches:
-              ignore: /.*/
+#            branches:
+#              ignore: /.*/
       - test-publiccode:
           requires:
             - start            
           filters:
             tags:
               only: /^v.*/
-            branches:
-              ignore: /.*/
+#            branches:
+#              ignore: /.*/
       - publish-tag-and-latest:
           context:
             - valentino
@@ -128,5 +128,5 @@ workflows:
           filters:
             tags:
               only: /^v.*/
-            branches:
-              ignore: /.*/
+#            branches:
+#              ignore: /.*/

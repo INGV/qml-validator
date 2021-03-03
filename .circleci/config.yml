@@ -56,8 +56,9 @@ jobs:
             ./docker-pushrm --file /tmp/workspace/README.md $IMAGE_NAME
 
   test-publiccode:
-    docker:
-      - image: docker:18.06.0-ce
+    executor: docker-publisher
+    #docker:
+    #  - image: docker:18.06.0-ce
     steps:
       - checkout
       - setup_remote_docker
@@ -75,7 +76,7 @@ jobs:
 
 workflows:
   version: 2.1
-  qml-validator-workflow:
+  myWorkflow:
     jobs:
       - build:
           filters:

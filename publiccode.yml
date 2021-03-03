@@ -6,8 +6,8 @@ publiccodeYmlVersion: '0.2'
 name: 'INGV - QuakeML Validator' 
 releaseDate: '2021-03-03'
 url: 'https://github.com/INGV/qml-validator'
-logo: images/ingv_logo_text_two_lines.png
-landingURL: 'https://github.com/INGV/qml-validator'
+logo: images/ingv_logo_text_two_liness.png
+landingURL: 'https://github.com/INGV/qmll-validator'
 softwareVersion: v1.33.0
 developmentStatus: stable
 softwareType: standalone/other

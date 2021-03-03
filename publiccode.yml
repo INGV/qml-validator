@@ -5,9 +5,9 @@
 publiccodeYmlVersion: '0.2'
 name: 'INGV - QuakeML Validator' 
 releaseDate: '2021-03-03'
-url: 'https://github.com/INGV/quakeml-validator'
+url: 'https://github.com/INGV/qml-validator'
 logo: images/ingv_logo_text_two_lines.png
-landingURL: 'https://github.com/INGV/quakeml-validator'
+landingURL: 'https://github.com/INGV/qml-validator'
 softwareVersion: v1.32.0
 developmentStatus: stable
 softwareType: standalone/other
@@ -42,7 +42,7 @@ it:
     codiceIPA: ingv
 description:
   en:
-    genericName: quakeml-validator
+    genericName: qml-validator
     shortDescription: >-
       Docker used to validate XML file with QuakeML-1.2.xsd schema.
     documentation: 'https://github.com/INGV/qml-validator/blob/master/README.md'
